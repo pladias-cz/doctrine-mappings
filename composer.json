@@ -6,7 +6,7 @@
     }
   },
   "require": {
-    "php": ">= 8.4",
+    "php": ">= 8.5",
     "nettrine/orm": "^0.10",
     "nettrine/fixtures": "^0"
   }

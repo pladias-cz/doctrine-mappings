@@ -6,12 +6,18 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Bayernflora\TaxonsConvertor;
+use Pladias\ORM\Enums\Locale;
 
 
+/**
+ * This entity works with view
+ */
 #[Entity()]
-#[Table(name: 'public.taxons_clear')] //TODO working with view
+#[Table(name: 'public.taxons_clear')]
 class Taxons
 {
     use TId;
@@ -71,6 +77,8 @@ class Taxons
     #[Column(type: 'boolean')]
     protected(set) bool $protected;
 
+    #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'pladiasTaxon')]
+    protected(set) TaxonsConvertor $taxonConvertor;
 
     public function getNamePreslia()
     {
@@ -88,5 +96,16 @@ class Taxons
         return false;
     }
 
-
+    /**
+     * used in florasylva probably only
+     * @internal
+     */
+    public function getLongName(Locale $locale = Locale::CS)
+    {
+        if ($locale === Locale::CS) {
+            return $this->nameCz. " (".$this->nameHtml.")";
+        } else {
+            return $this->nameHtml;
+        }
+    }
 }

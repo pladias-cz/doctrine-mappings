@@ -2,6 +2,7 @@
 
 namespace Pladias\ORM\Entity\Public;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -78,7 +79,7 @@ class Taxons
     protected(set) bool $protected;
 
     #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'pladiasTaxon')]
-    protected(set) TaxonsConvertor $taxonConvertor;
+    protected(set) Collection $taxonConvertor;
 
     public function getNamePreslia()
     {

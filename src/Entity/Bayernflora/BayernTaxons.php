@@ -2,6 +2,7 @@
 
 namespace Pladias\ORM\Entity\Bayernflora;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\OneToMany;
@@ -15,13 +16,13 @@ class BayernTaxons
     use TId;
 
     #[Column(type: 'string')]
-    protected(set) string $nameLat;
+    protected(set) ?string $nameLat;
     #[Column(type: 'integer')]
     protected(set) int $foreignId;
     #[Column(name: 'name_lat_full', type: 'string')]
     protected(set) string $nameLatFull;
     #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'bayernfloraTaxon')]
-    protected(set) TaxonsConvertor $convertor;
+    protected(set) Collection $convertor;
 
     public function setForeignId(int $foreignId): BayernTaxons
     {

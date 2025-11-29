@@ -27,7 +27,7 @@ class DistributionNonautomatic
 
     #[ManyToOne(targetEntity: RecordValidationStatus::class, inversedBy: 'convertor')]
     #[JoinColumn(name: 'validation_status', referencedColumnName: 'id')]
-    protected(set) RecordValidationStatus $status;
+    protected(set) ?RecordValidationStatus $status = null;
 
     #[Column(type: 'string')]
     protected(set) string $remark;

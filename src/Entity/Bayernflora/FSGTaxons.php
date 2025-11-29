@@ -3,6 +3,7 @@
 namespace Pladias\ORM\Entity\Bayernflora;
 
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -22,45 +23,45 @@ class FSGTaxons
 
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column(name: 'name_lat', type: 'string')]
     protected(set) string $nameLat;
 
-    #[Column(type: 'string')]
-    protected(set) string $nameCz;
+    #[Column(name: 'name_cz', type: 'string')]
+    protected(set) ?string $nameCz;
 
-    #[Column(type: 'string')]
-    protected(set) string $nameDe;
+    #[Column(name: 'name_de', type: 'string')]
+    protected(set) ?string $nameDe;
 
-    #[Column(type: 'string')]
-    protected(set) string $descriptionCz;
+    #[Column(name: 'description_cz', type: 'string')]
+    protected(set) ?string $descriptionCz;
 
-    #[Column(type: 'string')]
-    protected(set) string $descriptionDe;
+    #[Column(name: 'description_de', type: 'string')]
+    protected(set) ?string $descriptionDe;
 
-    #[Column(type: 'string')]
-    protected(set) string $descriptionEn;
+    #[Column(name: 'description_en', type: 'string')]
+    protected(set) ?string $descriptionEn;
 
     #[Column(type: 'string')]
     protected(set) string $redlistReason;
 
     #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'fsgTaxon')]
-    protected(set) array $taxonConvertor;
+    protected(set) Collection $taxonConvertor;
 
     #[OneToMany(targetEntity: Images::class, mappedBy: 'taxon')]
-    protected(set) array $images;
+    protected(set) Collection $images;
 
     #[Column(type: 'integer')]
-    protected(set) int $altitudeMax;
+    protected(set) ?int $altitudeMax;
 
     #[Column(type: 'integer')]
-    protected(set) int $altitudeMin;
+    protected(set) ?int $altitudeMin;
 
     #[Column(type: 'boolean')]
     protected(set) bool $autocomplete;
 
     #[ManyToOne(targetEntity: RedListCategory::class)]
     #[JoinColumn(name: 'redlist_category', referencedColumnName: 'id')]
-    protected ?RedListCategory $redListCategory;
+    protected(set) ?RedListCategory $redListCategory;
 
     public function getExtendedName($locale = Locale::CS): ?string
     {
@@ -119,6 +120,5 @@ class FSGTaxons
     {
         return count($this->images) === 0 ? false : true;
     }
-
 
 }

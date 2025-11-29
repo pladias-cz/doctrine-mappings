@@ -22,7 +22,27 @@ class TaxonsConvertor
 
     #[ManyToOne(targetEntity: Taxons::class, inversedBy: 'taxonConvertor')]
     #[JoinColumn(name: 'pladias_taxon', referencedColumnName: 'id', nullable: false)]
-    protected(set) Taxons $pladiasTaxa;
+    protected(set) Taxons $pladiasTaxon;
 
+    #[ManyToOne(targetEntity: BayernTaxons::class, inversedBy: 'convertor')]
+    #[JoinColumn(name: 'bayernflora_taxon', referencedColumnName: 'id')]
+    protected(set) BayernTaxons $bayernfloraTaxon;
 
+    public function setFsgTaxon(FSGTaxons $fsgTaxon): TaxonsConvertor
+    {
+        $this->fsgTaxon = $fsgTaxon;
+        return $this;
+    }
+
+    public function setPladiasTaxon(Taxons $pladiasTaxon): TaxonsConvertor
+    {
+        $this->pladiasTaxon = $pladiasTaxon;
+        return $this;
+    }
+
+    public function setBayernfloraTaxon(BayernTaxons $bayernfloraTaxon): TaxonsConvertor
+    {
+        $this->bayernfloraTaxon = $bayernfloraTaxon;
+        return $this;
+    }
 }

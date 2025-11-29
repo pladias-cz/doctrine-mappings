@@ -7,10 +7,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Public\Taxons;
 use Pladias\ORM\Enums\Locale;
 use Pladias\ORM\Exception\WrongLocaleException;
 
@@ -22,6 +25,40 @@ class FSGTaxons
     public const string  replacement = ' <span class="noItalics">$1</span>';
 
     use TId;
+
+    #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'fsgTaxon')]
+    protected(set) Collection $taxonConvertor;
+
+    #[OneToMany(targetEntity: Images::class, mappedBy: 'taxon')]
+    protected(set) Collection $images;
+
+    #[ManyToOne(targetEntity: RedListCategory::class)]
+    #[JoinColumn(name: 'redlist_category', referencedColumnName: 'id')]
+    protected(set) ?RedListCategory $redListCategory;
+
+    #[ManyToMany(targetEntity: BayernTaxons::class)]
+    #[JoinTable(
+        name: 'bayernflora.taxons_convertor',
+        joinColumns: [
+            new JoinColumn(name: 'fsg_taxon_id', referencedColumnName: 'id')
+        ],
+        inverseJoinColumns: [
+            new JoinColumn(name: 'bayernflora_taxon', referencedColumnName: 'id')
+        ]
+    )]
+    protected(set) Collection $bayernTaxa;
+
+    #[ManyToMany(targetEntity: Taxons::class)]
+    #[JoinTable(
+        name: 'bayernflora.taxons_convertor',
+        joinColumns: [
+            new JoinColumn(name: 'fsg_taxon_id', referencedColumnName: 'id')
+        ],
+        inverseJoinColumns: [
+            new JoinColumn(name: 'pladias_taxon', referencedColumnName: 'id')
+        ]
+    )]
+    protected(set) Collection $pladiasTaxa;
 
     #[Column(name: 'name_lat', type: 'string')]
     protected(set) string $nameLat;
@@ -44,12 +81,6 @@ class FSGTaxons
     #[Column(type: 'string')]
     protected(set) string $redlistReason;
 
-    #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'fsgTaxon')]
-    protected(set) Collection $taxonConvertor;
-
-    #[OneToMany(targetEntity: Images::class, mappedBy: 'taxon')]
-    protected(set) Collection $images;
-
     #[Column(type: 'integer')]
     protected(set) ?int $altitudeMax;
 
@@ -58,10 +89,6 @@ class FSGTaxons
 
     #[Column(type: 'boolean')]
     protected(set) bool $autocomplete;
-
-    #[ManyToOne(targetEntity: RedListCategory::class)]
-    #[JoinColumn(name: 'redlist_category', referencedColumnName: 'id')]
-    protected(set) ?RedListCategory $redListCategory;
 
     public function getExtendedName($locale = Locale::CS): ?string
     {
@@ -115,10 +142,15 @@ class FSGTaxons
         };
     }
 
-
     public function hasImages(): bool
     {
         return count($this->images) === 0 ? false : true;
+    }
+
+    public function setNameLat(string $nameLat): FSGTaxons
+    {
+        $this->nameLat = $nameLat;
+        return $this;
     }
 
 }

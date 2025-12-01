@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TName;
 
@@ -16,7 +16,7 @@ use Pladias\ORM\Entity\Attributes\TName;
 class EnumeratesValues
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
     use TName;
 
     #[Column(type: 'string')]

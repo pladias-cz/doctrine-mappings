@@ -5,7 +5,7 @@ namespace Pladias\ORM\Entity\Measurements;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 
 #[Entity()]
@@ -13,7 +13,7 @@ use Pladias\ORM\Entity\Attributes\TId;
 class Datatypes
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
 
     public const string INTERVAL_AVG = "interval_avg";
     public const string INTERVAL_MOD = "interval_mod";

@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TName;
 use Pladias\ORM\Entity\Public\Users;
@@ -22,7 +22,7 @@ use Pladias\ORM\Exception\WrongLocaleException;
 class Enumerates
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
     use TName;
 
     #[ManyToOne(targetEntity: Users::class)]

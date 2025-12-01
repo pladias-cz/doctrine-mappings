@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TName;
 use Pladias\ORM\Enums\Locale;
@@ -19,7 +19,7 @@ use Pladias\ORM\Exception\WrongLocaleException;
 class Sections
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
     use TName;
 
     #[Column(type: 'string')]

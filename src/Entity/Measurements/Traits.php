@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Public\Users;
 use Pladias\ORM\Enums\Locale;
@@ -19,7 +19,7 @@ use Pladias\ORM\Exception\WrongLocaleException;
 class Traits
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
 
     #[Column(type: 'string')]
     protected(set) string $attachment;

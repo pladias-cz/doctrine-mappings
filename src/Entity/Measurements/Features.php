@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TName;
 use Pladias\ORM\Entity\Public\SyntaxonRanks;
@@ -23,7 +23,8 @@ use Pladias\ORM\Exception\WrongLocaleException;
 class Features
 {
     use TId;
-    use TDescription;
+    use TDescriptionCs;
+
     use TName;
 
     public const int FEATURE_INV_STATUS = 148;

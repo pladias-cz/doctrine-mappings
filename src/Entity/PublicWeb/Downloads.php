@@ -19,6 +19,7 @@ class Downloads
     public const string SECTION_VEGETATION = "vegetation";
     public const string  SECTION_SPECIES = "species";
 
+    // TODO this may be incompatible floraveg/pladias
     #[Column(type: 'string')]
     protected(set) string $name;
     #[Column(type: 'string')]

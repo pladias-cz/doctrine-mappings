@@ -47,7 +47,7 @@ class Habitats
     protected(set) string $nameHTML;
 
     #[Column(type: 'string')]
-    protected(set) string $description;
+    protected(set) ?string $description;
 
     #[Column(name: 'map', type: 'boolean')]
     protected(set) bool $hasMap;

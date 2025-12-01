@@ -14,7 +14,7 @@ use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Public\Syntaxons;
 
 #[Entity()]
-#[Table(name: 'public.syntaxons_sections')]
+#[Table(name: 'public_web.syntaxons_sections')]
 class SyntaxonsSections
 {
     use TId;

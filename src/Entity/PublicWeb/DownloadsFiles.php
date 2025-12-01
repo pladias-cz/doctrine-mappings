@@ -15,7 +15,7 @@ class DownloadsFiles
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column(name:'file', type: 'string')]
     protected(set) string $filename;
 
     #[Column(type: 'string')]

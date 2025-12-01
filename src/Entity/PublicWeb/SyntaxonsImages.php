@@ -41,19 +41,19 @@ class SyntaxonsImages
     protected(set) string $locality;
 
     #[Column(type: 'string')]
-    protected(set) string $remark;
+    protected(set) ?string $remark;
 
     #[Column(type: 'string')]
     protected(set) string $datePrecision;
 
-    #[Column(type: 'string')]
-    protected(set) string $dominantTaxa;
+    #[Column(name: 'domin_taxa', type: 'string')]
+    protected(set) ?string $dominantTaxa;
 
     #[Column(type: 'string')]
     protected(set) string $representative;
 
     #[Column(type: 'string')]
-    protected(set) string $association;
+    protected(set) ?string $association;
 
     public function getHTMLTitle($syntaxonName): string
     {

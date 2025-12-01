@@ -49,7 +49,7 @@ class Syntaxons
     protected(set) string $author_2;
     #[Column(type: 'string')]
     protected(set) string $author_html;
-    #[Column(type: 'string')]
+    #[Column(name:'`citationHTML`',type: 'string')]
     protected(set) string $citationHTML;
     #[Column(type: 'string')]
     protected(set) string $code;
@@ -79,7 +79,7 @@ class Syntaxons
     protected(set) string $species_diag_html;
     #[Column(type: 'string')]
     protected(set) string $species_dominant_html;
-    #[Column(type: 'string')]
+    #[Column(name:'species_formal_html', type: 'string')]
     protected(set) string $species_formal_html_cs;
     #[Column(type: 'string')]
     protected(set) string $species_formal_html_en;

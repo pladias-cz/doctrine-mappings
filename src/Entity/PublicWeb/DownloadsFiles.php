@@ -16,7 +16,7 @@ class DownloadsFiles
     use TId;
 
     #[Column(type: 'string')]
-    protected(set) string $file;
+    protected(set) string $filename;
 
     #[Column(type: 'string')]
     protected(set) string $button;
@@ -30,7 +30,7 @@ class DownloadsFiles
 
     public function getIcon(): string
     {
-        $extension = pathinfo($this->file, PATHINFO_EXTENSION);
+        $extension = pathinfo($this->filename, PATHINFO_EXTENSION);
         switch ($extension) {
             case 'zip':
                 return 'icon-archive';

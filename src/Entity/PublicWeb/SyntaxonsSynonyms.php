@@ -27,7 +27,7 @@ class SyntaxonsSynonyms
     protected(set) Syntaxons $syntaxon;
 
     #[OneToMany(targetEntity: SyntaxonsSynonymsVersions::class, mappedBy: 'synonymum')]
-    #[OrderBy(['timestamp' => 'DESC'])]
+    #[OrderBy(['createdAt' => 'DESC'])]
     protected(set) Collection $versions;
 
     public function getLastVersion()

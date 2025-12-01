@@ -122,7 +122,7 @@ class Syntaxons
     protected(set) Collection $bibliography;
 
     #[OneToMany(targetEntity: SyntaxonsRemarksVersions::class, mappedBy: 'syntaxon')]
-    #[OrderBy(['timestamp' => 'DESC'])]
+    #[OrderBy(['createdAt' => 'DESC'])]
     protected(set) Collection $remarks;
 
     #[OneToMany(targetEntity: HabitatsSyntaxons::class, mappedBy: 'syntaxon')]
@@ -154,7 +154,7 @@ class Syntaxons
         return "https://files.ibot.cas.cz/cevs/maps/vegetation/" . $folder . "/" . strtok($this->code, ' ') . ".png";
     }
 
-    public function getNewestRemarkVersion(): ?string
+    public function getNewestRemarkVersion(): ?SyntaxonsRemarksVersions
     {
         if ($this->hasRemarks()) {
             return $this->remarks[0];
@@ -171,7 +171,7 @@ class Syntaxons
     }
 
 
-    public function getOldestRemarkVersion(): ?string
+    public function getOldestRemarkVersion(): ?SyntaxonsRemarksVersions
     {
         if ($this->hasRemarks()) {
             return $this->remarks->last();

@@ -2,6 +2,7 @@
 
 namespace Pladias\ORM\Entity\Measurements;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -28,11 +29,11 @@ class Traits
     protected(set) bool $default_values;
     #[Column(type: 'boolean')]
     protected(set) bool $deleted;
-    #[Column(name: 'source_cz', type: 'string')]
+    #[Column(name: 'source', type: 'string')]
     protected(set) string $sourceCs;
     #[Column(type: 'string')]
     protected(set) string $sourceEn;
-    #[Column(name: 'creation_timestamp', type: 'string')]
+    #[Column(name: 'creation_timestamp', type: Types::DATETIME_MUTABLE)]
     protected(set) \DateTime $creationTimestamp;
     #[ManyToOne(targetEntity: Users::class)]
     #[JoinColumn(name: 'owner', referencedColumnName: 'id')]

@@ -54,7 +54,7 @@ class Features
     #[Column(type: 'boolean')]
     protected(set) bool $useForDetermination;
     #[Column(type: 'boolean')]
-    protected(set) bool $determintationUnionInsteadIntersect;
+    protected(set) bool $determinationUnionInsteadIntersect;
     #[ManyToOne(targetEntity: Users::class)]
     #[JoinColumn(name: 'administrator', referencedColumnName: 'id')]
     protected(set) Users $administrator;

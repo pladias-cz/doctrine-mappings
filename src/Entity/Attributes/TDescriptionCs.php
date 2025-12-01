@@ -10,12 +10,12 @@ trait TDescriptionCs
 {
 
     #[Column(name:'description_cs', type: 'string')]
-    protected(set) string $descriptionCs;
+    protected(set) ?string $descriptionCs;
 
     #[Column(name:'description_en', type: 'string')]
-    protected(set) string $descriptionEn;
+    protected(set) ?string $descriptionEn;
 
-    public function getDescription($locale = "cs"): string
+    public function getDescription($locale = "cs"): ?string
     {
         if ($locale instanceof Locale) {
             $locale = $locale->value;

@@ -32,7 +32,7 @@ class Enumerates
     /**
      * @var Collection | EnumeratesValues[]
      */
-    #[OneToMany(targetEntity: EnumeratesValues::class, mappedBy: 'enumerate_id')]
+    #[OneToMany(targetEntity: EnumeratesValues::class, mappedBy: 'enumerateId')]
     #[OrderBy(['succession' => 'ASC'])]
     protected(set) Collection $values;
 

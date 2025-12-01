@@ -58,7 +58,7 @@ class Taxons
     protected(set) string $nameLatin;
 
     #[Column(type: 'string')]
-    protected(set) string $parents;
+    protected(set) ?string $parents;
 
     #[Column(name: 'parents_cz', type: 'string')]
     protected(set) string $parentsCz;

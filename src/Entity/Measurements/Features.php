@@ -31,9 +31,9 @@ class Features
     public const int  FEATURE_ORIGINALITY = 147;
     public const array FEATURE_HIDDEN_IDS = array(217, 160, 163, 166);
     #[Column(type: 'string')]
-    protected(set) string $bibliography_cs;
+    protected(set) ?string $bibliography_cs;
     #[Column(type: 'string')]
-    protected(set) string $bibliography_en;
+    protected(set) ?string $bibliography_en;
     #[Column(type: 'string')]
     protected(set) string $explanation_cs;
     #[Column(type: 'string')]
@@ -76,14 +76,14 @@ class Features
     protected(set) Inheritances $inheritance;
     #[ManyToOne(targetEntity: Units::class)]
     #[JoinColumn(name: 'unit_id', referencedColumnName: 'id')]
-    protected(set) Units $unit;
+    protected(set) ?Units $unit;
     /**
      * @var Collection | Traits[]
      */
     #[OneToMany(targetEntity: Traits::class, mappedBy: 'feature_id')]
     protected(set) Collection $traits;
 
-    public function getBibliography($locale = Locale::CS): string
+    public function getBibliography($locale = Locale::CS): ?string
     {
 
         if ($locale instanceof Locale) {

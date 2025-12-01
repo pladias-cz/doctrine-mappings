@@ -81,6 +81,9 @@ class Taxons
     #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'pladiasTaxon')]
     protected(set) Collection $taxonConvertor;
 
+    #[OneToMany(targetEntity: TaxonSynonyms::class, mappedBy: 'taxon')]
+    protected(set) Collection $synonyms;
+
     public function getNamePreslia()
     {
         $name = str_replace(".", "", $this->nameLatin) . "_report.pdf";

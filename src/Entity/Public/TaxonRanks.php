@@ -16,6 +16,8 @@ class TaxonRanks
     const GENUS_ID = 28;
     const CLASS_ID = 19;
     const FAMILIA_ID = 24;
+    public const int SPECIES_ID = 34;
+    public const array LOWER_THAN_FAMILY = [25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,46,47,53,54,56,57];
     const LOWER_THAN_GENUS = array(4, 30, 32, 34, 35, 36, 37, 38, 39, 46, 47, 53, 54, 56, 57);
     const ORDER_AND_LOWER = array(4, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 34, 35, 36, 37, 38, 39, 46, 47, 53, 54, 56, 57);
     const CULTIVAR = array(57);

@@ -8,9 +8,11 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Bayernflora\TaxonsConvertor;
+use Pladias\ORM\Entity\Dalibcz\TaxonInfo;
 use Pladias\ORM\Enums\Locale;
 
 
@@ -72,9 +74,6 @@ class Taxons
     #[Column(type: 'boolean')]
     protected(set) bool $suppressed;
 
-    /**
-     * hide localities on the public presentation
-     */
     #[Column(type: 'boolean')]
     protected(set) bool $protected;
 
@@ -83,6 +82,9 @@ class Taxons
 
     #[OneToMany(targetEntity: TaxonSynonyms::class, mappedBy: 'taxon')]
     protected(set) Collection $synonyms;
+
+    #[OneToOne(targetEntity: TaxonInfo::class, mappedBy: 'taxon')]
+    protected ?TaxonInfo $taxonInfo;
 
     public function getNamePreslia()
     {

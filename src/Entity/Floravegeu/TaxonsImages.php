@@ -25,7 +25,7 @@ class TaxonsImages
     #[Column(type: 'string')]
     protected(set) string $author;
     #[Column(type: 'string')]
-    protected(set) string $date;
+    protected(set) ?string $date;
     #[Column(type: 'string')]
     protected(set) string $external_id;
     #[Column(type: 'string')]

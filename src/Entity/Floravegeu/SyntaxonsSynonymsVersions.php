@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pladias\ORM\Entity\PublicWeb;
+namespace Pladias\ORM\Entity\Floravegeu;
 
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
@@ -11,7 +11,7 @@ use Pladias\ORM\Entity\Attributes\TCreatedAt;
 use Pladias\ORM\Entity\Attributes\TId;
 
 #[Entity()]
-#[Table(name: 'public_web.syntaxons_synonyms_versions')]
+#[Table(name: 'floravegeu.syntaxons_synonyms_versions')]
 class SyntaxonsSynonymsVersions
 {
     use TId;

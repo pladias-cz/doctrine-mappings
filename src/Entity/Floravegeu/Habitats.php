@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pladias\ORM\Entity\PublicWeb;
+namespace Pladias\ORM\Entity\Floravegeu;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
 
 #[Entity()]
-#[Table(name: 'public_web.habitats')]
+#[Table(name: 'floravegeu.habitats')]
 class Habitats
 {
     use TId;

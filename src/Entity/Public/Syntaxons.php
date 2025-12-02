@@ -15,13 +15,12 @@ use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TName;
-use Pladias\ORM\Entity\PublicWeb\HabitatsSyntaxons;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsBibliography;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsDiagnosticNonvascular;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsImages;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsRemarksVersions;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsSections;
-use Pladias\ORM\Entity\PublicWeb\SyntaxonsSynonyms;
+use Pladias\ORM\Entity\Floravegeu\HabitatsSyntaxons;
+use Pladias\ORM\Entity\Floravegeu\SyntaxonsBibliography;
+use Pladias\ORM\Entity\Floravegeu\SyntaxonsDiagnosticNonvascular;
+use Pladias\ORM\Entity\Floravegeu\SyntaxonsImages;
+use Pladias\ORM\Entity\Floravegeu\SyntaxonsRemarksVersions;
+use Pladias\ORM\Entity\Floravegeu\SyntaxonsSynonyms;
 use Pladias\ORM\Enums\Locale;
 use Pladias\ORM\Exception\WrongLocaleException;
 
@@ -34,7 +33,7 @@ class Syntaxons
 
     #[ManyToMany(targetEntity: SyntaxonsSections::class)]
     #[JoinTable(
-        name: 'public_web.rel_syntaxons_sections',
+        name: 'public.rel_syntaxons_sections',
         joinColumns: [
             new JoinColumn(name: 'syntaxon_id', referencedColumnName: 'id')
         ],

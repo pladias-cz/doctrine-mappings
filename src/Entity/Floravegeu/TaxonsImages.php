@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pladias\ORM\Entity\PublicWeb;
+namespace Pladias\ORM\Entity\Floravegeu;
 
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
@@ -12,7 +12,7 @@ use Pladias\ORM\Entity\Public\Taxons;
 use Pladias\ORM\Enums\DateFormat;
 
 #[Entity()]
-#[Table(name: 'public_web.taxons_images')]
+#[Table(name: 'floravegeu.taxons_images')]
 class TaxonsImages
 {
     use TId;

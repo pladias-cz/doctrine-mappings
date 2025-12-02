@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pladias\ORM\Entity\PublicWeb;
+namespace Pladias\ORM\Entity\Public;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\Column;
@@ -11,10 +11,9 @@ use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
-use Pladias\ORM\Entity\Public\Syntaxons;
 
 #[Entity()]
-#[Table(name: 'public_web.syntaxons_sections')]
+#[Table(name: 'public.syntaxons_sections')]
 class SyntaxonsSections
 {
     use TId;
@@ -37,7 +36,7 @@ class SyntaxonsSections
     #[ManyToMany(targetEntity: Syntaxons::class)]
     #[OrderBy(['lft' => 'ASC'])]
     #[JoinTable(
-        name: 'public_web.rel_syntaxons_sections',
+        name: 'public.rel_syntaxons_sections',
         joinColumns: [
             new JoinColumn(name: 'section_id', referencedColumnName: 'id')
         ],

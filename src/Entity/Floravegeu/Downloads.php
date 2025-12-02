@@ -31,8 +31,8 @@ class Downloads
     #[Column(type: 'string')]
     protected(set) string $text;
 
-    #[Column(type: 'integer')]
-    protected(set) int $version;
+    #[Column(type: 'string')]
+    protected(set) string $version;
 
     #[OneToMany(targetEntity: DownloadsFiles::class, mappedBy: 'downloadsId')]
     #[OrderBy(['succession' => 'ASC'])]

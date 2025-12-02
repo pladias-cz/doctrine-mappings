@@ -84,7 +84,7 @@ class Taxons
     protected(set) Collection $synonyms;
 
     #[OneToOne(targetEntity: TaxonInfo::class, mappedBy: 'taxon')]
-    protected ?TaxonInfo $taxonInfo;
+    protected(set) ?TaxonInfo $taxonInfo;
 
     public function getNamePreslia()
     {

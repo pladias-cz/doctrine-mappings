@@ -36,7 +36,7 @@ class Habitats
     protected(set) string $code;
 
     #[Column(type: 'string')]
-    protected(set) string $redListCode;
+    protected(set) ?string $redListCode;
 
     #[Column(type: 'string')]
     protected(set) string $redListName;
@@ -64,7 +64,7 @@ class Habitats
 
     public function hasNomenclature(): bool
     {
-        if ($this->redListCode === '') {
+        if (empty($this->redListCode)) {
             return false;
         }
         return true;

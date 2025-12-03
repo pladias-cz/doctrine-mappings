@@ -16,9 +16,6 @@ class Images
 {
     use Tid;
 
-    /**
-     * TODO @ORM\OneToOne(targetEntity="App\Model\Entity\Public\Taxons", inversedBy="images")
-     */
     #[ManyToOne(targetEntity: Taxons::class)]
     #[JoinColumn(name: 'taxon', referencedColumnName: 'id')]
     protected(set) Taxons $taxon;

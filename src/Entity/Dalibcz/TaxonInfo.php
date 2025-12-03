@@ -17,9 +17,6 @@ class TaxonInfo
     use TId;
     use TDescriptionCs;
 
-    /**
-     * TODO @ORM\OneToOne(targetEntity="App\Model\Entity\Public\Taxons", inversedBy="taxonInfo")
-     */
     #[ManyToOne(targetEntity: Taxons::class)]
     #[JoinColumn(name: 'taxon', referencedColumnName: 'id')]
     protected Taxons $taxon;

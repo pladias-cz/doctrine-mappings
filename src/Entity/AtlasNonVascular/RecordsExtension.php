@@ -2,7 +2,6 @@
 
 namespace Pladias\ORM\Entity\AtlasNonVascular;
 
-use App\Model\Entity\Atlas\Records;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
@@ -10,6 +9,7 @@ use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\Table;
+use Pladias\ORM\Entity\Atlas\Records;
 
 #[Entity()]
 #[Table(name: 'atlas_nonvascular.records_extension')]

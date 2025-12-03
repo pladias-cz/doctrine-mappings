@@ -83,9 +83,6 @@ class Taxons
     #[OneToMany(targetEntity: TaxonSynonyms::class, mappedBy: 'taxon')]
     protected(set) Collection $synonyms;
 
-    #[OneToOne(targetEntity: TaxonInfo::class, mappedBy: 'taxon')]
-    protected(set) ?TaxonInfo $taxonInfo;
-
     public function getNamePreslia()
     {
         $name = str_replace(".", "", $this->nameLatin) . "_report.pdf";

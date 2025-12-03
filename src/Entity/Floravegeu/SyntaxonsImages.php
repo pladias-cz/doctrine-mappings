@@ -32,13 +32,13 @@ class SyntaxonsImages
     protected(set) string $author_name;
 
     #[Column]
-    protected(set) string $date;
+    protected(set) ?string $date;
 
     #[Column]
     protected(set) string $filename;
 
     #[Column]
-    protected(set) string $locality;
+    protected(set) ?string $locality;
 
     #[Column]
     protected(set) ?string $remark;

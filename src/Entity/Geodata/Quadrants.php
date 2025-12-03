@@ -19,10 +19,10 @@ class Quadrants
     #[JoinColumn(name: 'square_id', referencedColumnName: 'id')]
     protected(set) Squares $square;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
 
-    #[Column(name: 'geom_wgs', type: 'string')]
+    #[Column(name: 'geom_wgs')]
     protected(set) string $geom;
 
 }

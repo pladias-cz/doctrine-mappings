@@ -16,16 +16,16 @@ class RedListCategory
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbreviation;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameCz;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameDe;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameEn;
 
 

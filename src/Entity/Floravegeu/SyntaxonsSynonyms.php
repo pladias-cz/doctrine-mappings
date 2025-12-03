@@ -19,7 +19,7 @@ class SyntaxonsSynonyms
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $originalName;
 
     #[ManyToOne(targetEntity: Syntaxons::class, inversedBy: 'synonyms')]

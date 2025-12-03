@@ -13,13 +13,13 @@ class RecordValidationStatus
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $color;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $priority;
 
 }

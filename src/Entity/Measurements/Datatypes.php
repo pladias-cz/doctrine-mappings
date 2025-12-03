@@ -31,7 +31,7 @@ class Datatypes
 
     #[Column(type: 'boolean')]
     protected(set) bool $dominantValue;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $key;
     #[Column(type: 'integer')]
     protected(set) int $max;
@@ -40,13 +40,13 @@ class Datatypes
     #[Column(type: 'boolean')]
     protected(set) bool $multiplicity;
 
-    #[Column(name: 'name_cz', type: 'string')]
+    #[Column(name: 'name_cz')]
     protected(set) string $nameCs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $tablename;
     #[Column(type: 'boolean')]
     protected(set) bool $unmeasurable;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $valueComment;
     #[Column(type: 'integer')]
     protected(set) int $frequency;

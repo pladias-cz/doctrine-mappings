@@ -17,7 +17,7 @@ class Units
     use TName;
     use TDescriptionCs;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev;
 
 

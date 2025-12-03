@@ -18,13 +18,13 @@ class Projects
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $credibility;
-    #[Column(name: 'name', type: 'string')]
+    #[Column(name: 'name')]
     protected(set) string $nameCs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameEn;
 
     #[ManyToOne(targetEntity: Institutions::class)]

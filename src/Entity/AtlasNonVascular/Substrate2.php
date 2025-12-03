@@ -19,7 +19,7 @@ class Substrate2
     #[JoinColumn(name: 'substrate_1_id', referencedColumnName: 'id')]
     protected(set) Substrate1 $substrate1;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $keyCz;
 
     #[Column(type: 'integer')]

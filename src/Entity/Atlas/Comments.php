@@ -29,7 +29,7 @@ class Comments
     protected(set) \DateTime $resolved_timestamp;
     #[Column(name: 'edit_timestamp', type: Types::DATETIME_MUTABLE, nullable: false)]
     protected(set) \DateTime $edit_timestamp;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $message;
 
 

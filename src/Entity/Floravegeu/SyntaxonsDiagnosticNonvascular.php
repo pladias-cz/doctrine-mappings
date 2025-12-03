@@ -18,10 +18,10 @@ class SyntaxonsDiagnosticNonvascular
 
     public const array TaxaGroups = ["Bryophytes", "Algae", "Cyanobacteria", "Lichens", "Fungi"];
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $taxagroup;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $taxon;
 
     #[ManyToOne(targetEntity: Syntaxons::class, inversedBy: 'diagnosticNonvascular')]

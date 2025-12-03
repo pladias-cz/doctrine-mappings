@@ -19,7 +19,7 @@ class EnumeratesValues
     use TDescriptionCs;
     use TName;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $foreign_id;
     #[Column(type: 'integer')]
     protected(set) int $succession;

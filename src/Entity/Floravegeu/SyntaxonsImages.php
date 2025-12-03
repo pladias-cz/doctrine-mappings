@@ -28,31 +28,31 @@ class SyntaxonsImages
     #[JoinColumn(name: 'country', referencedColumnName: 'id')]
     protected(set) Countries $country;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author_name;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $date;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $filename;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $locality;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $remark;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $datePrecision;
 
-    #[Column(name: 'domin_taxa', type: 'string')]
+    #[Column(name: 'domin_taxa')]
     protected(set) ?string $dominantTaxa;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $representative;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $association;
 
     public function getHTMLTitle($syntaxonName): string

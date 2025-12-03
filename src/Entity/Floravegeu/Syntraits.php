@@ -13,10 +13,10 @@ class Syntraits
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
 }

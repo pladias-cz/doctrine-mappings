@@ -13,13 +13,13 @@ class RecordOriginalityStatus
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $icon;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_cz;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $priority;
 
 }

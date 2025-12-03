@@ -32,21 +32,21 @@ class Habitats
     #[Column(type: 'integer')]
     protected(set) int $rgt;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $redListCode;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $redListName;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameHTML;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $description;
 
     #[Column(name: 'map', type: 'boolean')]

@@ -15,7 +15,7 @@ class TraitVisibilityStatus
 
     public const int VISIBLE_PUBLIC = 4;
 
-    #[Column(name: 'name_cz', type: 'string')]
+    #[Column(name: 'name_cz')]
     protected(set) string $nameCs;
 
     #[Column(type: 'integer')]

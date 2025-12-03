@@ -21,13 +21,13 @@ class HabitatsNonvascular
     public const string  Domin = "Dominant";
     public const array  TaxaTypes = [self::Cons, self::Diag, self::Domin];
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $taxagroup;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $type;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $taxon;
 
     #[ManyToOne(targetEntity: Habitats::class, inversedBy: 'taxaNonvascular')]

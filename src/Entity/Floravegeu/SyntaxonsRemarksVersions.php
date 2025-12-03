@@ -18,16 +18,16 @@ class SyntaxonsRemarksVersions
     use TId;
     use TCreatedAt;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $prefix;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $content;
 
     #[ManyToOne(targetEntity: Syntaxons::class, inversedBy: 'remarks')]
     #[JoinColumn(name: 'syntaxon_id', referencedColumnName: 'id')]
     protected(set) Syntaxons $syntaxon;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $versionDescription;
 
 

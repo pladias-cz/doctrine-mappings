@@ -20,19 +20,19 @@ class Taxa
     #[Column(name: 'taxon_key', type: 'integer')]
     protected(set) int $taxonKey;
 
-    #[Column(name: 'scientific_name', type: 'string')]
+    #[Column(name: 'scientific_name')]
     protected(set) string $scientificName;
 
     #[Column(name: 'accepted_taxon_key', type: 'integer')]
     protected(set) int $acceptedTaxonKey;
 
-    #[Column(name: 'accepted_scientific_name', type: 'string')]
+    #[Column(name: 'accepted_scientific_name')]
     protected(set) string $acceptedScientificName;
 
-    #[Column(name: 'taxon_rank', type: 'string')]
+    #[Column(name: 'taxon_rank')]
     protected(set) string $taxonRank;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $species;
 
     #[Column(name: 'species_key', type: 'integer')]

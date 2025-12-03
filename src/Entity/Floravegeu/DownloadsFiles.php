@@ -15,10 +15,10 @@ class DownloadsFiles
 {
     use TId;
 
-    #[Column(name:'file', type: 'string')]
+    #[Column(name:'file')]
     protected(set) string $filename;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $button;
 
     #[Column(type: 'integer')]

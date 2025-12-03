@@ -13,34 +13,34 @@ class Herbariums
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev_explanation;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $address;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $city;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $contact;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $curator;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $import_id;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $owner;
 
     #[Column(type: 'boolean')]

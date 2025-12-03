@@ -13,10 +13,10 @@ class HabitatsRelationships
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
     public function getCodeInverted(): string

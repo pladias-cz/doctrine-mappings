@@ -19,10 +19,10 @@ class Users
     #[Column(type: 'boolean')]
     protected(set) bool $deleted;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $email;
 
     #[Column(type: 'integer')]
@@ -31,13 +31,13 @@ class Users
     #[Column(type: 'boolean')]
     protected(set) bool $mapadmin;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $password;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $surname;
 
     #[Column(type: 'boolean')]

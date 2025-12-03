@@ -14,13 +14,13 @@ class Bibliography
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbreviation;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $citation;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $detail;
 
     public function getAbbreviation(): string

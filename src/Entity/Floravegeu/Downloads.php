@@ -20,18 +20,18 @@ class Downloads
     public const string  SECTION_SPECIES = "species";
 
     // TODO this may be incompatible floraveg/pladias
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $section;
 
     #[Column(type: 'integer')]
     protected(set) int $succession;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $text;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $version;
 
     #[OneToMany(targetEntity: DownloadsFiles::class, mappedBy: 'downloadsId')]

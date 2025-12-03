@@ -18,16 +18,16 @@ class SyntaxonRanks
     public const int ALLIANCE = 4;
     public const int  ASSOCIATION = 5;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev_eng;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $id_foreign;
 
-    #[Column(name:'name_cz', type: 'string')]
+    #[Column(name:'name_cz')]
     protected(set) string $nameCs;
 
-    #[Column(name:'name_eng', type: 'string')]
+    #[Column(name:'name_eng')]
     protected(set) string $nameEn;
 
     public function getName($locale = Locale::CS): string

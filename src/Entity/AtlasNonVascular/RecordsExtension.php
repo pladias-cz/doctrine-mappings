@@ -16,9 +16,9 @@ use Pladias\ORM\Entity\Atlas\Records;
 class RecordsExtension
 {
 
-    #[Column(name: 'substrate', type: 'string')]
+    #[Column(name: 'substrate')]
     protected(set) string $substrateText;
-    #[Column(name: 'chemical', type: 'string')]
+    #[Column(name: 'chemical')]
     protected(set) string $chemicalText;
     #[OneToOne(targetEntity: Records::class, inversedBy: 'nonVascularExtension')]
     #[JoinColumn(name: 'record_id', referencedColumnName: 'id')]

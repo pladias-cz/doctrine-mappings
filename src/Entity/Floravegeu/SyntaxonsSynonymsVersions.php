@@ -18,26 +18,26 @@ class SyntaxonsSynonymsVersions
 
     use TCreatedAt;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $cpn;
 
     #[ManyToOne(targetEntity: SyntaxonsSynonyms::class, inversedBy: 'versions')]
     #[JoinColumn(name: 'synonymum', referencedColumnName: 'id')]
     protected(set) SyntaxonsSynonyms $synonymum;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $codeRemark;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $remark;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $versionDescription;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameShort;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameAuthor;
 
     public function getFormatedOutput(): string

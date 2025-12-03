@@ -13,7 +13,7 @@ class HabitatsRanks
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
 }

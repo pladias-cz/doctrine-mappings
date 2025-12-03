@@ -13,10 +13,10 @@ class Squares
 {
     use TId;
 
-    #[Column(name: 'geom_wgs', type: 'string')]
+    #[Column(name: 'geom_wgs')]
     protected(set) string $geom;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
 
 }

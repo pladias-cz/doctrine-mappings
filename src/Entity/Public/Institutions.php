@@ -29,13 +29,13 @@ class Institutions
     )]
     protected(set) Collection $users;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_eng;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_short;
 
 

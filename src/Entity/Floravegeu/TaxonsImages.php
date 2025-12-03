@@ -22,23 +22,23 @@ class TaxonsImages
     public const string  PRECISION_YEAR = "Y";
     #[Column(type: 'integer')]
     protected(set) int $altitude;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $date;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $external_id;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $filename;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $locality;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $remark;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $representative;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $source;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $datePrecision;
     #[Column(type: 'integer')]
     protected(set) int $succession;

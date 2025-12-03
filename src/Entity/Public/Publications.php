@@ -15,16 +15,16 @@ class Publications
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $title;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $authors;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $publisher;
 
     #[Column(type: 'integer')]
@@ -36,7 +36,7 @@ class Publications
     #[Column(type: 'boolean')]
     protected(set) bool $textCz;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $textEn;
 
     #[Column(type: 'integer')]

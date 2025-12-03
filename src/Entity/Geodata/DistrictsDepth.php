@@ -13,10 +13,10 @@ class DistrictsDepth
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
 

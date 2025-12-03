@@ -21,13 +21,13 @@ class TaxonSynonyms
     #[JoinColumn(name: 'taxon_id', referencedColumnName: 'id')]
     protected(set) Taxons $taxon;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameLat;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $suffix;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameHtml;
 
     #[Column(type: 'boolean')]

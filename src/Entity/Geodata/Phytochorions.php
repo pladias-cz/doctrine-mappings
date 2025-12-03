@@ -18,16 +18,16 @@ class Phytochorions
     #[Id, GeneratedValue(strategy: 'IDENTITY')]
     protected(set) ?int $id;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $color;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $district;
 
-    #[Column(name: 'geom_wgs', type: 'string')]
+    #[Column(name: 'geom_wgs')]
     protected(set) string $geom_wgs;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
 

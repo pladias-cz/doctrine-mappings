@@ -15,11 +15,11 @@ class BayernTaxons
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $nameLat;
     #[Column(type: 'integer')]
     protected(set) int $foreignId;
-    #[Column(name: 'name_lat_full', type: 'string')]
+    #[Column(name: 'name_lat_full')]
     protected(set) string $nameLatFull;
     #[OneToMany(targetEntity: TaxonsConvertor::class, mappedBy: 'bayernfloraTaxon')]
     protected(set) Collection $convertor;

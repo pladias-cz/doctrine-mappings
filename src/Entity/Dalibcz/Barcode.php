@@ -13,25 +13,25 @@ class Barcode
 {
     use Tid;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $taxon;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $itemId;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $country;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $source;
-    #[Column(name: 'accession_its', type: 'string')]
+    #[Column(name: 'accession_its')]
     protected(set) ?string $accessionITS;
-    #[Column(name: 'accession_mtssu', type: 'string')]
+    #[Column(name: 'accession_mtssu')]
     protected(set) ?string $accessionMTSSU;
-    #[Column(name: 'seq_its', type: 'string')]
+    #[Column(name: 'seq_its')]
     protected(set) ?string $seqITS;
-    #[Column(name: 'seq_mtssu', type: 'string')]
+    #[Column(name: 'seq_mtssu')]
     protected(set) ?string $seqMTSSU;
-    #[Column(name: 'method_its', type: 'string')]
+    #[Column(name: 'method_its')]
     protected(set) ?string $methodITS;
-    #[Column(name: 'method_mtssu', type: 'string')]
+    #[Column(name: 'method_mtssu')]
     protected(set) ?string $methodMTSSU;
 
 

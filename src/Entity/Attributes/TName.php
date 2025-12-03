@@ -9,10 +9,10 @@ use Pladias\ORM\Exception\WrongLocaleException;
 trait TName
 {
 
-    #[Column(name:'name_cz', type: 'string')]
+    #[Column(name:'name_cz')]
     protected(set) string $nameCs;
 
-    #[Column(name:'name_en', type: 'string')]
+    #[Column(name:'name_en')]
     protected(set) string $nameEn;
 
     public function getName($locale = Locale::CS): string

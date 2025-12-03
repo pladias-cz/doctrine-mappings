@@ -16,7 +16,7 @@ class SyntaxonsBibliography
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $cite;
 
     #[Column(type: 'integer')]

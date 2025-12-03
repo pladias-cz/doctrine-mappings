@@ -29,7 +29,7 @@ class DistributionNonautomatic
     #[JoinColumn(name: 'validation_status', referencedColumnName: 'id')]
     protected(set) ?RecordValidationStatus $status = null;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $remark;
 
     public function setFsgTaxon(FSGTaxons $fsgTaxon): DistributionNonautomatic

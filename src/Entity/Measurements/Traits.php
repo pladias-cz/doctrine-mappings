@@ -21,17 +21,17 @@ class Traits
     use TId;
     use TDescriptionCs;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $attachment;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $attachment_type;
     #[Column(type: 'boolean')]
     protected(set) bool $default_values;
     #[Column(type: 'boolean')]
     protected(set) bool $deleted;
-    #[Column(name: 'source', type: 'string')]
+    #[Column(name: 'source')]
     protected(set) string $sourceCs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $sourceEn;
     #[Column(name: 'creation_timestamp', type: Types::DATETIME_MUTABLE)]
     protected(set) \DateTime $creationTimestamp;

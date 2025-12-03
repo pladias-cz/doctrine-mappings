@@ -19,25 +19,25 @@ class Districts
     #[JoinColumn(name: 'rank', referencedColumnName: 'id')]
     protected(set) DistrictsDepth $rank;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $abbrev;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $color;
 
     #[Column(type: 'integer')]
     protected(set) int $depth;
 
-    #[Column(name: 'geom_wgs', type: 'string')]
+    #[Column(name: 'geom_wgs')]
     protected(set) string $geom_wgs;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $identificator;
 
     #[Column(type: 'integer')]
     protected(set) int $lft;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
     #[Column(type: 'integer')]

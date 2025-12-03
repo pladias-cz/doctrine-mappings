@@ -23,7 +23,7 @@ class HabitatsSyntaxonsNonvascular
     #[JoinColumn(name: 'relationship_id', referencedColumnName: 'id')]
     protected(set) HabitatsRelationships $relationship;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
 
 }

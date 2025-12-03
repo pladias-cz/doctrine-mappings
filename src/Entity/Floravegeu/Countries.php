@@ -13,10 +13,10 @@ class Countries
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_en;
 
     public function setCode(string $code): self

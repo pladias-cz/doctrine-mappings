@@ -19,10 +19,10 @@ class UserSettings
     #[JoinColumn(name: 'user_id', referencedColumnName: 'id')]
     protected(set) Users $user;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $value;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $key;
 
 

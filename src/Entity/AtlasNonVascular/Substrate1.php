@@ -18,7 +18,7 @@ class Substrate1
     #[OneToMany(targetEntity: Substrate2::class, mappedBy: 'substrate1')]
     protected(set) Collection $substrate2;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $keyCz;
 
     #[Column(type: 'integer')]

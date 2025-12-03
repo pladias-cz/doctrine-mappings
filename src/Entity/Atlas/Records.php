@@ -31,25 +31,25 @@ class Records
     protected(set) ?int $altitude_max;
     #[Column(type: 'integer')]
     protected(set) ?int $altitude_min;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $comment;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $datum;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $datum_precision;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $detrev;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $environment;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $gps_coords_source;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $locality;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nearest_town_text;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $original_name;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $source;
     #[ManyToOne(targetEntity: Projects::class)]
     #[JoinColumn(name: 'project_id', referencedColumnName: 'id')]
@@ -96,7 +96,7 @@ class Records
     )]
     protected(set) Collection $herbariums;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $coords_wgs;
     #[Column(name: 'edit_timestamp', type: Types::DATETIME_MUTABLE, nullable: false)]
     protected(set) \DateTime $edit_timestamp;

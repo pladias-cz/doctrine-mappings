@@ -22,9 +22,9 @@ class Sections
     use TDescriptionCs;
     use TName;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $bibliography_cs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $bibliography_en;
     #[Column(type: 'integer')]
     protected(set) int $depth;

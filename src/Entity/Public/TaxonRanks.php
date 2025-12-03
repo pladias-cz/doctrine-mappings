@@ -22,31 +22,31 @@ class TaxonRanks
     const ORDER_AND_LOWER = array(4, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 34, 35, 36, 37, 38, 39, 46, 47, 53, 54, 56, 57);
     const CULTIVAR = array(57);
 
-    #[Column(name: 'abbrev_eng', type: 'string')]
+    #[Column(name: 'abbrev_eng')]
     protected(set) string $abbreviationEng;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $category;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $icn;
 
-    #[Column(name: 'id_dani', type: 'string')]
+    #[Column(name: 'id_dani')]
     protected(set) string $idDanihelka;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $succession;
 
-    #[Column(name: 'id_tv3', type: 'string')]
+    #[Column(name: 'id_tv3')]
     protected(set) string $id_tv3;
 
-    #[Column(name: 'name_addon', type: 'string')]
+    #[Column(name: 'name_addon')]
     protected(set) string $nameSuffix;
 
-    #[Column(name: 'name_cz', type: 'string')]
+    #[Column(name: 'name_cz')]
     protected(set) string $nameCz;
 
-    #[Column(name: 'name_eng', type: 'string')]
+    #[Column(name: 'name_eng')]
     protected(set) string $nameEng;
 
     public function isSpeciesOrLower(): bool

@@ -20,10 +20,10 @@ class Dictionary
     use TName;
     use TDescription;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nameDe;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $descriptionDe;
 
 

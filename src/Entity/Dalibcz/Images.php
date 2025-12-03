@@ -22,13 +22,13 @@ class Images
 
     #[Column(name: 'size_raw', type: 'blob')]
     protected(set) mixed $sizeRaw;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author;
-    #[Column(name: 'extension', type: 'string')]
+    #[Column(name: 'extension')]
     protected(set) string $fileExtension;
-    #[Column(name: 'mime', type: 'string')]
+    #[Column(name: 'mime')]
     protected(set) string $mimeType;
 
     public function setTaxon(Taxons $taxon): Images

@@ -16,13 +16,13 @@ class Images
 {
     use TId;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $filename;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $locality;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $remark;
 
     #[ManyToOne(targetEntity: FSGTaxons::class, inversedBy: 'images')]

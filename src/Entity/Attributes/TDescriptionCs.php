@@ -9,10 +9,10 @@ use Pladias\ORM\Exception\WrongLocaleException;
 trait TDescriptionCs
 {
 
-    #[Column(name:'description_cs', type: 'string')]
+    #[Column(name:'description_cs')]
     protected(set) ?string $descriptionCs;
 
-    #[Column(name:'description_en', type: 'string')]
+    #[Column(name:'description_en')]
     protected(set) ?string $descriptionEn;
 
     public function getDescription($locale = "cs"): ?string

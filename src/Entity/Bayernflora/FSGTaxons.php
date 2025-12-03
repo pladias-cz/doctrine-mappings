@@ -60,25 +60,25 @@ class FSGTaxons
     )]
     protected(set) Collection $pladiasTaxa;
 
-    #[Column(name: 'name_lat', type: 'string')]
+    #[Column(name: 'name_lat')]
     protected(set) string $nameLat;
 
-    #[Column(name: 'name_cz', type: 'string')]
+    #[Column(name: 'name_cz')]
     protected(set) ?string $nameCz;
 
-    #[Column(name: 'name_de', type: 'string')]
+    #[Column(name: 'name_de')]
     protected(set) ?string $nameDe;
 
-    #[Column(name: 'description_cz', type: 'string')]
+    #[Column(name: 'description_cz')]
     protected(set) ?string $descriptionCz;
 
-    #[Column(name: 'description_de', type: 'string')]
+    #[Column(name: 'description_de')]
     protected(set) ?string $descriptionDe;
 
-    #[Column(name: 'description_en', type: 'string')]
+    #[Column(name: 'description_en')]
     protected(set) ?string $descriptionEn;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $redlistReason;
 
     #[Column(type: 'integer')]

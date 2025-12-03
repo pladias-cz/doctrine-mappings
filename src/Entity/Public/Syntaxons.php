@@ -42,55 +42,55 @@ class Syntaxons
         ]
     )]
     protected(set) Collection $syntaxons_sections;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author_2;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $author_html;
     #[Column(name:'`citationHTML`',type: 'string')]
     protected(set) string $citationHTML;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $code;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $comment;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $description;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $filename;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $map_filename;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_cz_html;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_en_html;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name_lat;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $nomen;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $pages;
     #[Column(type: 'integer')]
     protected(set) int $rgt;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $species_const_html;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $species_diag_html;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $species_dominant_html;
-    #[Column(name:'species_formal_html', type: 'string')]
+    #[Column(name:'species_formal_html')]
     protected(set) string $species_formal_html_cs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $species_formal_html_en;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $synonymum_html;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $text_1;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $text_2;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $text_3;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $text_en;
     #[Column(type: 'integer')]
     protected(set) int $releveCount;

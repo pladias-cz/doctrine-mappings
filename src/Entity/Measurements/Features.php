@@ -30,15 +30,15 @@ class Features
     public const int FEATURE_INV_STATUS = 148;
     public const int  FEATURE_ORIGINALITY = 147;
     public const array FEATURE_HIDDEN_IDS = array(217, 160, 163, 166);
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $bibliography_cs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) ?string $bibliography_en;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $explanation_cs;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $explanation_en;
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $external_id;
     #[Column(type: 'integer')]
     protected(set) int $maximum;

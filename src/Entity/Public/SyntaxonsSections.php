@@ -24,7 +24,7 @@ class SyntaxonsSections
     #[Column(type: 'integer')]
     protected(set) int $lft;
 
-    #[Column(type: 'string')]
+    #[Column]
     protected(set) string $name;
 
     #[Column(type: 'integer')]

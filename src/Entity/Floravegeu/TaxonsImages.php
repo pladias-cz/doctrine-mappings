@@ -48,7 +48,7 @@ class TaxonsImages
 
     #[ManyToOne(targetEntity: Countries::class)]
     #[JoinColumn(name: 'country', referencedColumnName: 'id')]
-    protected(set) Countries $country;
+    protected(set) ?Countries $country;
 
     public function getHTMLTitle($taxonName)
     {

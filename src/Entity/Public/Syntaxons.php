@@ -214,4 +214,17 @@ class Syntaxons
         }
         return $this->diagnosticNonvascular;
     }
+
+    public function getNameHtml($locale = Locale::CS): string
+    {
+        if ($locale instanceof Locale) {
+            $locale = $locale->value;
+        }
+
+        return match ($locale) {
+            Locale::CS->value => $this->name_cz_html,
+            Locale::EN->value => !empty($this->name_en_html) ? $this->name_en_html : $this->name_cz_html,
+            default => throw new WrongLocaleException(),
+        };
+    }
 }

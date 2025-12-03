@@ -22,17 +22,17 @@ class Barcode
     #[Column(type: 'string')]
     protected(set) string $source;
     #[Column(name: 'accession_its', type: 'string')]
-    protected(set) string $accessionITS;
+    protected(set) ?string $accessionITS;
     #[Column(name: 'accession_mtssu', type: 'string')]
-    protected(set) string $accessionMTSSU;
+    protected(set) ?string $accessionMTSSU;
     #[Column(name: 'seq_its', type: 'string')]
-    protected(set) string $seqITS;
+    protected(set) ?string $seqITS;
     #[Column(name: 'seq_mtssu', type: 'string')]
-    protected(set) string $seqMTSSU;
+    protected(set) ?string $seqMTSSU;
     #[Column(name: 'method_its', type: 'string')]
-    protected(set) string $methodITS;
+    protected(set) ?string $methodITS;
     #[Column(name: 'method_mtssu', type: 'string')]
-    protected(set) string $methodMTSSU;
+    protected(set) ?string $methodMTSSU;
 
 
     public function getSeqITS_HTML(): string

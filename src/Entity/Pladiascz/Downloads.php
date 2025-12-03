@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
-use Pladias\ORM\Entity\Attributes\TName;
+use Pladias\ORM\Entity\Attributes\TNameCs;
 use Pladias\ORM\Entity\Attributes\TText;
 
 #[Entity()]
@@ -17,7 +17,7 @@ use Pladias\ORM\Entity\Attributes\TText;
 class Downloads
 {
     use TId;
-    use TName;
+    use TNameCs;
     use TText;
 
     public const string SECTION_BIBLIOGRAPHY = "bibliografie";

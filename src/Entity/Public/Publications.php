@@ -33,9 +33,8 @@ class Publications
     #[Column(type: 'integer')]
     protected(set) int $autocomplete;
 
-    #[Column(type: 'boolean')]
-    protected(set) bool $textCz;
-
+    #[Column]
+    protected(set) string $textCz;
     #[Column]
     protected(set) string $textEn;
 

@@ -25,7 +25,7 @@ class TaxonSynonyms
     protected(set) string $nameLat;
 
     #[Column]
-    protected(set) string $suffix;
+    protected(set) ?string $suffix;
 
     #[Column]
     protected(set) string $nameHtml;

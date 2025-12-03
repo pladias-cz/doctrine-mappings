@@ -4,9 +4,11 @@ namespace Pladias\ORM\Entity\Pladiascz;
 
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
 
 #[Entity()]
+#[Table(name: 'pladiascz.kvetena')]
 class Kvetena
 {
     use TId;

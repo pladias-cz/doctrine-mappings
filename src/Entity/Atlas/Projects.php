@@ -24,7 +24,7 @@ class Projects
     protected(set) string $credibility;
     #[Column(name: 'name')]
     protected(set) string $nameCs;
-    #[Column]
+    #[Column(name: 'name_eng')]
     protected(set) string $nameEn;
 
     #[ManyToOne(targetEntity: Institutions::class)]

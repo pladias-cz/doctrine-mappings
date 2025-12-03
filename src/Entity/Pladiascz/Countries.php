@@ -15,6 +15,7 @@ class Countries
     use TId;
     use TName;
 
+    public const int CZ = 1;
     #[Column]
     protected(set) string $code;
 

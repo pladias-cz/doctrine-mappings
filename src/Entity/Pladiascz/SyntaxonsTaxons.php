@@ -26,7 +26,7 @@ class SyntaxonsTaxons
     #[Column(type: 'boolean')]
     protected(set) bool $bold;
 
-    #[Column]
+    #[Column(name: 'taxon_group')]
     protected(set) string $group;
 
     #[Column]

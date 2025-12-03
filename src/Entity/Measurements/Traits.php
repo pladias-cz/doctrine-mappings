@@ -22,7 +22,7 @@ class Traits
     use TDescriptionCs;
 
     #[Column]
-    protected(set) string $attachment;
+    protected(set) mixed $attachment;
     #[Column]
     protected(set) mixed $attachment_type;
     #[Column(type: 'boolean')]

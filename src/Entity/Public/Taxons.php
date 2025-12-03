@@ -3,6 +3,7 @@
 namespace Pladias\ORM\Entity\Public;
 
 use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -10,6 +11,7 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\Table;
+use Pladias\ORM\Entity\Atlas\TaxonMapsettings;
 use Pladias\ORM\Entity\Atlas\TaxonsUsers;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TMptt;
@@ -81,6 +83,10 @@ class Taxons
     #[OneToMany(targetEntity: TaxonsUsers::class, mappedBy: 'taxons_id')]
     protected(set) Collection $revisors;
 
+    #[OneToOne(targetEntity: TaxonMapsettings::class)]
+    #[JoinColumn(name: 'id', referencedColumnName: 'taxon_id')]
+    protected(set) TaxonMapsettings $mapsettings;
+
     public function getNamePreslia()
     {
         $name = str_replace(".", "", $this->nameLatin) . "_report.pdf";
@@ -108,5 +114,30 @@ class Taxons
         } else {
             return $this->nameHtml;
         }
+    }
+
+    public function isMapped()
+    {
+        try {
+            if (NULL !== $this->mapsettings
+                && (0 < $this->mapsettings->revision_status->id || 0 < $this->mapsettings->publication_status->id)
+            ){
+                return true;
+            }
+        } catch (EntityNotFoundException $exception) {
+        }
+        return false;
+    }
+
+    public function getSynonymsFromSource($source)
+    {
+        $return = array();
+        foreach ($this->synonyms as $synonym) {
+            if ($synonym->publication->id === $source) {
+                $return[] = $synonym;
+            }
+        }
+        return $return;
+
     }
 }

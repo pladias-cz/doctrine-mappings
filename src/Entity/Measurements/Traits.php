@@ -24,7 +24,7 @@ class Traits
     #[Column]
     protected(set) string $attachment;
     #[Column]
-    protected(set) string $attachment_type;
+    protected(set) mixed $attachment_type;
     #[Column(type: 'boolean')]
     protected(set) bool $default_values;
     #[Column(type: 'boolean')]

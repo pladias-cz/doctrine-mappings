@@ -8,13 +8,14 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
 
 #[Entity()]
 #[Table(name: 'geodata.districts')]
 class Districts
 {
     use TId;
-
+    use TMptt;
     #[ManyToOne(targetEntity: DistrictsDepth::class)]
     #[JoinColumn(name: 'rank', referencedColumnName: 'id')]
     protected(set) DistrictsDepth $rank;
@@ -25,22 +26,14 @@ class Districts
     #[Column]
     protected(set) string $color;
 
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
-
     #[Column(name: 'geom_wgs')]
     protected(set) string $geom_wgs;
 
     #[Column]
     protected(set) string $identificator;
 
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
-
     #[Column]
     protected(set) string $name;
 
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
 
 }

@@ -18,7 +18,7 @@ class Units
     use TDescriptionCs;
 
     #[Column]
-    protected(set) string $abbrev;
+    protected(set) ?string $abbrev;
 
 
 }

@@ -61,7 +61,7 @@ class Features
     protected(set) Users $administrator;
     #[ManyToOne(targetEntity: Enumerates::class)]
     #[JoinColumn(name: 'enumerate', referencedColumnName: 'id')]
-    protected(set) Enumerates $enumerate;
+    protected(set) ?Enumerates $enumerate;
     #[ManyToOne(targetEntity: Sections::class, inversedBy: 'features')]
     #[JoinColumn(name: 'section_id', referencedColumnName: 'id')]
     protected(set) Sections $section_id;

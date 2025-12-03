@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
 use Pladias\ORM\Entity\Attributes\TName;
 use Pladias\ORM\Entity\Floravegeu\HabitatsSyntaxons;
 use Pladias\ORM\Entity\Floravegeu\SyntaxonsBibliography;
@@ -30,6 +31,7 @@ class Syntaxons
 {
     use TId;
     use TName;
+    use TMptt;
 
     #[ManyToMany(targetEntity: SyntaxonsSections::class)]
     #[JoinTable(
@@ -70,8 +72,7 @@ class Syntaxons
     protected(set) string $nomen;
     #[Column]
     protected(set) string $pages;
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
+
     #[Column]
     protected(set) string $species_const_html;
     #[Column]
@@ -94,10 +95,7 @@ class Syntaxons
     protected(set) string $text_en;
     #[Column(type: 'integer')]
     protected(set) int $releveCount;
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
+
     #[Column(type: 'boolean')]
     protected(set) bool $vegkeyForest;
 

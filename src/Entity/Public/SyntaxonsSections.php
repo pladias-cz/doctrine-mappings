@@ -11,24 +11,16 @@ use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
+use Pladias\ORM\Entity\Attributes\TNameCs;
 
 #[Entity()]
 #[Table(name: 'public.syntaxons_sections')]
 class SyntaxonsSections
 {
     use TId;
-
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
-
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
-
-    #[Column]
-    protected(set) string $name;
-
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
+    use TNameCs;
+    use TMptt;
 
     #[Column(type: 'boolean')]
     protected(set) bool $vascular;

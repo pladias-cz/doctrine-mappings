@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Atlas\TaxonsUsers;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
 use Pladias\ORM\Entity\Bayernflora\TaxonsConvertor;
 use Pladias\ORM\Entity\Dalibcz\TaxonInfo;
 use Pladias\ORM\Enums\Locale;
@@ -25,7 +26,7 @@ use Pladias\ORM\Enums\Locale;
 class Taxons
 {
     use TId;
-
+    use TMptt;
     #[ManyToOne(targetEntity: TaxonRanks::class)]
     #[JoinColumn(name: 'rank', referencedColumnName: 'id')]
     protected(set) TaxonRanks $rank;
@@ -36,8 +37,6 @@ class Taxons
     #[Column]
     protected(set) string $comment;
 
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
 
     #[Column(name: 'depth_backup', type: 'integer')]
     protected(set) int $depthBackup;
@@ -45,14 +44,12 @@ class Taxons
     #[Column(name: 'id_dani')]
     protected(set) string $idDanihelka;
 
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
 
     #[Column(name: 'lft_backup', type: 'integer')]
     protected(set) int $lft_backup;
 
     #[Column(name: 'name_cz')]
-    protected(set) string $nameCz;
+    protected(set) ?string $nameCz;
 
     #[Column(name: 'name_html')]
     protected(set) string $nameHtml;
@@ -65,9 +62,6 @@ class Taxons
 
     #[Column(name: 'parents_cz')]
     protected(set) string $parentsCz;
-
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
 
     #[Column(name: 'rgt_backup', type: 'integer')]
     protected(set) int $rgt_backup;

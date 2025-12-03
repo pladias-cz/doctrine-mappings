@@ -12,25 +12,19 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
 
 #[Entity()]
 #[Table(name: 'floravegeu.habitats')]
 class Habitats
 {
     use TId;
+    use TMptt;
 
     #[ManyToOne(targetEntity: HabitatsRanks::class)]
     #[JoinColumn(name: 'rank', referencedColumnName: 'id')]
     protected(set) HabitatsRanks $rank;
 
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
-
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
-
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
 
     #[Column]
     protected(set) string $code;

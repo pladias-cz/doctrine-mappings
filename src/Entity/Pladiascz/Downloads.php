@@ -33,7 +33,7 @@ class Downloads
     protected(set) int $succession;
 
     #[Column(type: 'integer')]
-    protected(set) int $version;
+    protected(set) ?int $version;
 
     #[OneToMany(targetEntity: DownloadsFiles::class, mappedBy: 'downloadsId')]
     #[OrderBy(['succession' => 'ASC'])]

@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
+use Pladias\ORM\Entity\Attributes\TMptt;
 use Pladias\ORM\Entity\Attributes\TName;
 use Pladias\ORM\Enums\Locale;
 use Pladias\ORM\Exception\WrongLocaleException;
@@ -21,17 +22,11 @@ class Sections
     use TId;
     use TDescriptionCs;
     use TName;
-
+    use TMptt;
     #[Column]
     protected(set) string $bibliography_cs;
     #[Column]
     protected(set) string $bibliography_en;
-    #[Column(type: 'integer')]
-    protected(set) int $depth;
-    #[Column(type: 'integer')]
-    protected(set) int $lft;
-    #[Column(type: 'integer')]
-    protected(set) int $rgt;
 
     /**
      * @var Features[]

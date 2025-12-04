@@ -36,7 +36,7 @@ class Taxons
     protected(set) TaxonRanks $rank;
 
     #[Column]
-    protected(set) string $author;
+    protected(set) ?string $author;
 
     #[Column]
     protected(set) string $comment;

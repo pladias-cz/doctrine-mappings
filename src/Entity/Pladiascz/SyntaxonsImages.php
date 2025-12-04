@@ -14,7 +14,7 @@ use Pladias\ORM\Entity\Public\Syntaxons;
 use Pladias\ORM\Enums\DateFormat;
 //TODO this class is redundant to floravegeu - let's refactored when the images are moved to the repository
 #[Entity()]
-#[Table(name: 'pladiascz.syntaxons_images')]
+#[Table(name: 'pladiascz.vegetation_images')]
 class SyntaxonsImages
 {
     use TId;

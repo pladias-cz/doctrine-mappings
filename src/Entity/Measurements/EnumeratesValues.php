@@ -30,4 +30,21 @@ class EnumeratesValues
     #[JoinColumn(name: 'enumerate_id', referencedColumnName: 'id')]
     protected(set) Enumerates $enumerateId;
 
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'succession' => $this->succession,
+            'showInDetermination' => $this->showInDetermination,
+            'en' => [
+                'name' => $this->nameEn,
+                'description' => $this->descriptionEn,
+
+            ],
+            'cs' => [
+                'description' => $this->descriptionCs,
+                'name' => $this->nameCs
+            ]
+        ];
+    }
 }

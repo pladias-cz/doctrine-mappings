@@ -41,7 +41,7 @@ class Enumerates
         $return = [];
         foreach ($this->values as $value) {
             if ($value->showInDetermination) {
-                $return[] = $value;
+                $return[] = $value->toArray();
             }
         }
         return $return;

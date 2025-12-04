@@ -2,6 +2,7 @@
 
 namespace Pladias\ORM\Entity\Public;
 
+use App\Presenters\BasePresenter;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\Mapping\Column;
@@ -16,8 +17,8 @@ use Pladias\ORM\Entity\Atlas\TaxonsUsers;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Attributes\TMptt;
 use Pladias\ORM\Entity\Bayernflora\TaxonsConvertor;
-use Pladias\ORM\Entity\Dalibcz\TaxonInfo;
 use Pladias\ORM\Enums\Locale;
+use Pladias\ORM\Exception\WrongLocaleException;
 
 
 /**
@@ -29,6 +30,7 @@ class Taxons
 {
     use TId;
     use TMptt;
+
     #[ManyToOne(targetEntity: TaxonRanks::class)]
     #[JoinColumn(name: 'rank', referencedColumnName: 'id')]
     protected(set) TaxonRanks $rank;
@@ -103,17 +105,42 @@ class Taxons
         return false;
     }
 
-    /**
-     * used in florasylva probably only
-     * @internal
-     */
-    public function getLongName(Locale $locale = Locale::CS)
+    public function getLongName($locale = Locale::CS)
     {
-        if ($locale === Locale::CS) {
-            return $this->nameCz. " (".$this->nameHtml.")";
-        } else {
-            return $this->nameHtml;
+        if ($locale instanceof Locale) {
+            $locale = $locale->value;
         }
+        return match ($locale) {
+            Locale::CS->value => $this->nameCz . " (" . $this->nameHtml . ")",
+            Locale::EN->value => $this->nameHtml,
+            default => throw new WrongLocaleException(),
+        };
+
+    }
+
+    public function getName($locale = Locale::CS)
+    {
+        if ($locale instanceof Locale) {
+            $locale = $locale->value;
+        }
+        return match ($locale) {
+            Locale::CS->value => $this->nameCz,
+            Locale::EN->value => $this->nameHtml,
+            default => throw new WrongLocaleException(),
+        };
+    }
+
+    public function getNameMulti($locale = Locale::CS)
+    {
+
+        if ($locale instanceof Locale) {
+            $locale = $locale->value;
+        }
+        return match ($locale) {
+            Locale::CS->value => $this->nameCz . " (<i>" . $this->nameHtml . "</i>)",
+            Locale::EN->value => $this->nameHtml,
+            default => throw new WrongLocaleException(),
+        };
     }
 
     public function isMapped()
@@ -121,7 +148,7 @@ class Taxons
         try {
             if (NULL !== $this->mapsettings
                 && (0 < $this->mapsettings->revision_status->id || 0 < $this->mapsettings->publication_status->id)
-            ){
+            ) {
                 return true;
             }
         } catch (EntityNotFoundException $exception) {

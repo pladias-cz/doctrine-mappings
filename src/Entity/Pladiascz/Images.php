@@ -31,13 +31,13 @@ class Images
     protected(set) Taxons $taxon;
     #[ManyToOne(targetEntity: Countries::class)]
     #[JoinColumn(name: 'country', referencedColumnName: 'id')]
-    protected(set) Countries $country;
+    protected(set) ?Countries $country;
     #[Column(type: 'integer')]
     protected(set) int $altitude;
     #[Column]
     protected(set) string $author;
     #[Column]
-    protected(set) string $date;
+    protected(set) ?string $date;
     #[Column]
     protected(set) string $external_id;
     #[Column]

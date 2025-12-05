@@ -10,12 +10,12 @@ trait TRemark
 {
 
     #[Column]
-    protected(set) string $remark_cs;
+    protected(set) ?string $remark_cs;
 
     #[Column]
-    protected(set) string $remark_en;
+    protected(set) ?string $remark_en;
 
-    public function getRemark($locale = Locale::CS): string
+    public function getRemark($locale = Locale::CS): ?string
     {
         if ($locale instanceof Locale) {
             $locale = $locale->value;

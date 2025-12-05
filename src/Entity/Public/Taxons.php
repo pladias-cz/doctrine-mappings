@@ -44,8 +44,8 @@ class Taxons
     #[Column(name: 'depth_backup', type: 'integer')]
     protected(set) int $depthBackup;
 
-    #[Column(name: 'id_dani')]
-    protected(set) string $idDanihelka;
+    #[Column(name: 'id_dani', type: 'integer')]
+    protected(set) int $idDanihelka;
 
 
     #[Column(name: 'lft_backup', type: 'integer')]

@@ -51,7 +51,7 @@ class Records
     #[Column]
     protected(set) string $original_name;
     #[Column]
-    protected(set) string $source;
+    protected(set) ?string $source;
     #[ManyToOne(targetEntity: Projects::class)]
     #[JoinColumn(name: 'project_id', referencedColumnName: 'id')]
     protected(set) Projects $project;

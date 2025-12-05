@@ -17,7 +17,7 @@ class RecordsExtension
 {
 
     #[Column(name: 'substrate')]
-    protected(set) string $substrateText;
+    protected(set) ?string $substrateText;
     #[Column(name: 'chemical')]
     protected(set) string $chemicalText;
     #[OneToOne(targetEntity: Records::class, inversedBy: 'nonVascularExtension')]

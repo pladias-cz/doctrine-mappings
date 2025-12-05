@@ -69,11 +69,11 @@ class Records
     #[JoinColumn(name: 'originality_id', referencedColumnName: 'id')]
     protected(set) RecordOriginalityStatus $originalityStatus;
 
-    #[ManyToOne(targetEntity: Taxons::class, inversedBy: 'records')]
+    #[ManyToOne(targetEntity: Taxons::class)]
     #[JoinColumn(name: 'taxon_id', referencedColumnName: 'id')]
     protected(set) Taxons $taxon;
 
-    #[ManyToOne(targetEntity: Phytochorions::class, inversedBy: 'records')]
+    #[ManyToOne(targetEntity: Phytochorions::class)]
     #[JoinColumn(name: 'phytochorion_id', referencedColumnName: 'rowid')]
     protected(set) Phytochorions $phytochorion;
 
@@ -91,7 +91,7 @@ class Records
 
     #[ManyToMany(targetEntity: Herbariums::class)]
     #[JoinTable(
-        name: 'atlas.institutions_users',
+        name: 'atlas.records_herbariums',
         joinColumns: [
             new JoinColumn(name: 'records_id', referencedColumnName: 'id')
         ],
@@ -115,8 +115,8 @@ class Records
     protected(set) float $latitude;
     #[Column(type: 'float')]
     protected(set) float $longitude;
-    #[OneToOne(targetEntity: RecordsExtension::class, mappedBy: 'recordId')]
-    protected $nonVascularExtension;
+    #[OneToOne(targetEntity: RecordsExtension::class, mappedBy: 'recordId', fetch: 'LAZY')]
+    protected(set) ?RecordsExtension $nonVascularExtension;
 
 
     public function isExpired(): bool

@@ -64,7 +64,7 @@ class Taxons
     protected(set) ?string $parents;
 
     #[Column(name: 'parents_cz')]
-    protected(set) string $parentsCz;
+    protected(set) ?string $parentsCz;
 
     #[Column(name: 'rgt_backup', type: 'integer')]
     protected(set) int $rgt_backup;

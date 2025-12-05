@@ -35,7 +35,7 @@ class Records
     #[Column]
     protected(set) string $comment;
     #[Column]
-    protected(set) string $datum;
+    protected(set) ?string $datum;
     #[Column]
     protected(set) string $datum_precision;
     #[Column]
@@ -47,7 +47,7 @@ class Records
     #[Column]
     protected(set) string $locality;
     #[Column]
-    protected(set) string $nearest_town_text;
+    protected(set) ?string $nearest_town_text;
     #[Column]
     protected(set) string $original_name;
     #[Column]
@@ -75,7 +75,7 @@ class Records
 
     #[ManyToOne(targetEntity: Phytochorions::class)]
     #[JoinColumn(name: 'phytochorion_id', referencedColumnName: 'rowid')]
-    protected(set) Phytochorions $phytochorion;
+    protected(set) ?Phytochorions $phytochorion;
 
     #[ManyToMany(targetEntity: Authors::class)]
     #[JoinTable(

@@ -2,7 +2,6 @@
 
 namespace Pladias\ORM\Entity\Public;
 
-use App\Presenters\BasePresenter;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\Mapping\Column;

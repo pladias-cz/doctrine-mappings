@@ -15,6 +15,7 @@ use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\AtlasNonVascular\RecordsExtension;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Geodata\Districts;
+use Pladias\ORM\Entity\Geodata\Phytochorions;
 use Pladias\ORM\Entity\Public\Taxons;
 
 #[Entity()]
@@ -71,6 +72,10 @@ class Records
     #[ManyToOne(targetEntity: Taxons::class, inversedBy: 'records')]
     #[JoinColumn(name: 'taxon_id', referencedColumnName: 'id')]
     protected(set) Taxons $taxon;
+
+    #[ManyToOne(targetEntity: Phytochorions::class, inversedBy: 'records')]
+    #[JoinColumn(name: 'phytochorion_id', referencedColumnName: 'rowid')]
+    protected(set) Phytochorions $phytochorion;
 
     #[ManyToMany(targetEntity: Authors::class)]
     #[JoinTable(

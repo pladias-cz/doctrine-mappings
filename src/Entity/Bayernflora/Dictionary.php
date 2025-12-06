@@ -6,9 +6,9 @@ namespace Pladias\ORM\Entity\Bayernflora;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\Table;
-use Pladias\ORM\Entity\Attributes\TDescription;
+use Pladias\ORM\Entity\Attributes\TDescriptionCs;
 use Pladias\ORM\Entity\Attributes\TId;
-use Pladias\ORM\Entity\Attributes\TName;
+use Pladias\ORM\Entity\Attributes\TNameCs;
 use Pladias\ORM\Enums\Locale;
 use Pladias\ORM\Exception\WrongLocaleException;
 
@@ -17,8 +17,8 @@ use Pladias\ORM\Exception\WrongLocaleException;
 class Dictionary
 {
     use TId;
-    use TName;
-    use TDescription;
+    use TNameCs;
+    use TDescriptionCs;
 
     #[Column]
     protected(set) string $nameDe;

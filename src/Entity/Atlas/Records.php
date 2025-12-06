@@ -64,7 +64,7 @@ class Records
 
     #[ManyToOne(targetEntity: Districts::class)]
     #[JoinColumn(name: 'nearest_town_id', referencedColumnName: 'id')]
-    protected(set) Districts $nearestTown;
+    protected(set) ?Districts $nearestTown;
     #[ManyToOne(targetEntity: RecordOriginalityStatus::class)]
     #[JoinColumn(name: 'originality_id', referencedColumnName: 'id')]
     protected(set) RecordOriginalityStatus $originalityStatus;

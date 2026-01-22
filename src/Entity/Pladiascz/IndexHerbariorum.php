@@ -23,6 +23,9 @@ class IndexHerbariorum
     #[Column(type: 'integer', nullable: true)]
     protected(set) ?int $surveyId;
 
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $externalId;
+
     #[Column(name: 'institution_name', type: 'string', nullable: true)]
     protected(set) ?string $institutionName;
 

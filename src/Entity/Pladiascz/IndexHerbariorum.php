@@ -23,10 +23,55 @@ class IndexHerbariorum
     #[Column(type: 'integer', nullable: true)]
     protected(set) ?int $surveyId;
 
-    #[Column]
-    protected(set) string $institutionName;
+    #[Column(name: 'institution_name', type: 'string', nullable: true)]
+    protected(set) ?string $institutionName;
 
-    #[Column(name: 'response_2025')]
+    #[Column(name: 'response_2025', type: 'string', nullable: false, options: ["default" => "full"])]
     protected(set) string $response_2025;
+
+    #[Column(name: 'institution_founded', type: 'string', nullable: true)]
+    protected(set) ?string $institutionFounded;
+
+    #[Column(name: 'herbarium_founded', type: 'string', nullable: true)]
+    protected(set) ?string $herbariumFounded;
+
+    #[Column(type: 'string', nullable: true)]
+    protected(set) ?string $acronym;
+
+    #[Column(name: 'address_correspondence', type: 'text', nullable: true)]
+    protected(set) ?string $addressCorrespondence;
+
+    #[Column(name: 'address_visiting', type: 'text', nullable: true)]
+    protected(set) ?string $addressVisiting;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $phone;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $email;
+
+    #[Column(name: 'web_institution', type: 'string', nullable: true)]
+    protected(set) ?string $webInstitution;
+
+    #[Column(name: 'web_catalogue', type: 'string', nullable: true)]
+    protected(set) ?string $webCatalogue;
+
+    #[Column(name: 'gps_visiting', type: 'string', nullable: true)]
+    protected(set) ?string $gpsVisiting;
+
+    #[Column(name: 'curator_lead', type: 'string', nullable: true)]
+    protected(set) ?string $curatorLead;
+
+    #[Column(name: 'curator_others', type: 'text', nullable: true)]
+    protected(set) ?string $curatorOthers;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $collectors;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $collections;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $custods;
 
 }

@@ -77,4 +77,6 @@ class IndexHerbariorum
     #[Column(type: 'text', nullable: true)]
     protected(set) ?string $custods;
 
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $gbif;
 }

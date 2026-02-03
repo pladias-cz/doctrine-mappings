@@ -82,4 +82,7 @@ class IndexHerbariorum
 
     #[Column(type: 'text', nullable: true)]
     protected(set) ?string $note;
+
+    #[Column(type: 'text', nullable: true)]
+    protected(set) ?string $provenience;
 }

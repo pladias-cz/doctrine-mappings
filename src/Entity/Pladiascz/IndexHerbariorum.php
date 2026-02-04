@@ -85,4 +85,19 @@ class IndexHerbariorum
 
     #[Column(type: 'text', nullable: true)]
     protected(set) ?string $provenience;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countTotal;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countDatabased;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countOnline;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countPhotoprivate;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countPhotopublic;
 }

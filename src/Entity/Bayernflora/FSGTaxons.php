@@ -98,12 +98,12 @@ class FSGTaxons
         $extendedName = '';
 
         if ($locale === Locale::DE->value) {
-            $extendedName .= $this->nameDe;
+            $extendedName .= $this->nameDe." ";
         } else {
-            $extendedName .= $this->nameCz;
+            $extendedName .= $this->nameCz." ";
         }
         if ($this->getName($locale) !== null) {
-            $extendedName .= " (";
+            $extendedName .= "(";
         }
         $extendedName .= "<i>" . $this->nameLat . "</i>";
         if ($this->getName($locale) !== null) {

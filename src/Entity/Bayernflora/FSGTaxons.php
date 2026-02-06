@@ -88,9 +88,6 @@ class FSGTaxons
     protected(set) ?int $altitudeMin;
 
     #[Column(type: 'boolean')]
-    protected(set) bool $autocomplete;
-
-    #[Column(type: 'boolean')]
     protected(set) bool $isFvd;
 
     #[Column(type: 'boolean')]

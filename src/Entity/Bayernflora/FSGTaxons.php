@@ -90,6 +90,12 @@ class FSGTaxons
     #[Column(type: 'boolean')]
     protected(set) bool $autocomplete;
 
+    #[Column(type: 'boolean')]
+    protected(set) bool $isFvd;
+
+    #[Column(type: 'boolean')]
+    protected(set) bool $isFsg;
+
     public function getExtendedName($locale = Locale::CS): ?string
     {
         if ($locale instanceof Locale) {

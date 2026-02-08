@@ -9,9 +9,8 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
 use Pladias\ORM\Entity\Attributes\TId;
 use Pladias\ORM\Entity\Public\Taxons;
-use Pladias\ORM\Repository\Public\TaxonsRepository;
 
-#[Entity(repositoryClass: TaxonsRepository::class)]
+#[Entity()]
 #[Table(name: 'gbif.taxa')]
 class Taxa
 {

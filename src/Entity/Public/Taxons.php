@@ -18,12 +18,13 @@ use Pladias\ORM\Entity\Attributes\TMptt;
 use Pladias\ORM\Entity\Bayernflora\TaxonsConvertor;
 use Pladias\ORM\Enums\Locale;
 use Pladias\ORM\Exception\WrongLocaleException;
+use Pladias\ORM\Repository\Public\TaxonsRepository;
 
 
 /**
  * This entity works with view
  */
-#[Entity()]
+#[Entity(repositoryClass: TaxonsRepository::class)]
 #[Table(name: 'public.taxons_clear')]
 class Taxons
 {

@@ -156,4 +156,16 @@ class FSGTaxons
         return $this;
     }
 
+    public function setIsFvd(bool $isFvd): FSGTaxons
+    {
+        $this->isFvd = $isFvd;
+        return $this;
+    }
+
+    public function setIsFsg(bool $isFsg): FSGTaxons
+    {
+        $this->isFsg = $isFsg;
+        return $this;
+    }
+
 }

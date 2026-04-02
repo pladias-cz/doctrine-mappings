@@ -18,6 +18,12 @@ class Phytochorions
     #[Id, GeneratedValue(strategy: 'IDENTITY')]
     protected(set) ?int $id;
 
+    /**
+     * botanical id of the Phytochorion
+     */
+    #[Column(name: 'phyto_id')]
+    protected(set) string $number;
+
     #[Column]
     protected(set) string $color;
 

@@ -101,9 +101,9 @@ class FSGTaxons
         $extendedName = '';
 
         if ($locale === Locale::DE->value) {
-            $extendedName .= $this->nameDe." ";
+            $extendedName .= $this->nameDe . " ";
         } else {
-            $extendedName .= $this->nameCz." ";
+            $extendedName .= $this->nameCz . " ";
         }
         if ($this->getName($locale) !== null) {
             $extendedName .= "(";
@@ -153,6 +153,12 @@ class FSGTaxons
     public function setNameLat(string $nameLat): FSGTaxons
     {
         $this->nameLat = $nameLat;
+        return $this;
+    }
+
+    public function setNameCz(string $nameCz): FSGTaxons
+    {
+        $this->nameCz = $nameCz;
         return $this;
     }
 

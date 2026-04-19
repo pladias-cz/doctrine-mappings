@@ -32,6 +32,9 @@ class DistributionNonautomatic
     #[Column]
     protected(set) string $remark;
 
+    #[Column(type: 'boolean', name:'machine')]
+    protected(set) bool $createdByMachine;
+
     public function setFsgTaxon(FSGTaxons $fsgTaxon): DistributionNonautomatic
     {
         $this->fsgTaxon = $fsgTaxon;
@@ -56,5 +59,10 @@ class DistributionNonautomatic
         return $this;
     }
 
+    public function setCreatedByMachine(bool $createdByMachine): DistributionNonautomatic
+    {
+        $this->createdByMachine = $createdByMachine;
+        return $this;
+    }
 
 }

@@ -100,4 +100,7 @@ class IndexHerbariorum
 
     #[Column(type: 'integer', nullable: true)]
     protected(set) ?int $countPhotopublic;
+
+    #[Column(type: 'boolean')]
+    protected(set) bool $acronymInternational;
 }

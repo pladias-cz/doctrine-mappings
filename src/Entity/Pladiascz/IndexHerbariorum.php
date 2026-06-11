@@ -103,4 +103,11 @@ class IndexHerbariorum
 
     #[Column(type: 'boolean')]
     protected(set) bool $acronymInternational;
+
+    #[Column(type: 'integer', nullable: true)]
+    protected(set) ?int $countTypes;
+
+    #[Column(type: 'string', nullable: true)]
+    protected(set) ?string $otherCollections;
+
 }

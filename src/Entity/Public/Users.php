@@ -34,7 +34,7 @@ class Users
     #[Column]
     protected(set) string $name;
 
-    #[Column]
+    #[Column(name: 'hashed_password')]
     protected(set) string $password;
 
     #[Column]
@@ -49,5 +49,7 @@ class Users
     #[Column(type: 'boolean')]
     protected(set) bool $traitadmin;
 
+    #[Column(name: 'auth_token')]
+    protected(set) string $token;
 
 }

@@ -113,4 +113,6 @@ class IndexHerbariorum
     #[Column(type: 'string')]
     protected(set) string $city;
 
+    #[Column(name: 'taxa_content', type: 'string', nullable: true)]
+    protected(set) ?string $taxaContent;
 }

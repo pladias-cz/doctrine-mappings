@@ -110,4 +110,7 @@ class IndexHerbariorum
     #[Column(type: 'string', nullable: true)]
     protected(set) ?string $otherCollections;
 
+    #[Column(type: 'string')]
+    protected(set) string $city;
+
 }

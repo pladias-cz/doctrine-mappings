@@ -110,8 +110,8 @@ class IndexHerbariorum
     #[Column(type: 'string', nullable: true)]
     protected(set) ?string $otherCollections;
 
-    #[Column(type: 'string')]
-    protected(set) string $city;
+    #[Column(type: 'string', nullable: true)]
+    protected(set) ?string $city;
 
     #[Column(name: 'taxa_content', type: 'string', nullable: true)]
     protected(set) ?string $taxaContent;
